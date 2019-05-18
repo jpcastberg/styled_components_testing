@@ -1,5 +1,5 @@
 {
-  "name": "styled_components",
+  "name": "styled_components_testing",
   "version": "1.0.0",
   "description": "A testing ground for Styled Components",
   "main": "server/index.js",
