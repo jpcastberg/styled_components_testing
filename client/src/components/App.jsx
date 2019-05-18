@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
@@ -8,7 +13,9 @@ const Title = styled.h1`
 `;
 
 const App = () => (
-  <Title>This is a styled component</Title>
+  <Wrapper>
+    <Title>This is a styled component</Title>
+  </Wrapper>
 );
 
 export default App;
