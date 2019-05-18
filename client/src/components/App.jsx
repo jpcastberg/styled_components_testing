@@ -39,6 +39,30 @@ const StyledLink = styled(Link)`
   font-weight: bold;
 `;
 
+const StyledCounter = styled.div`
+  /* ... */
+`
+const Paragraph = styled.p`
+  /* ... */
+`
+
+class Counter extends React.Component {
+  state = { count: 0 }
+
+  increment = () => this.setState({ count: this.state.count + 1 })
+  decrement = () => this.setState({ count: this.state.count - 1 })
+
+  render() {
+    return (
+      <StyledCounter>
+        <Paragraph>{this.state.count}</Paragraph>
+        <Button onClick={this.increment}>+</Button>
+        <Button onClick={this.decrement}>-</Button>
+      </StyledCounter>
+    )
+  }
+}
+
 const App = () => (
   <Wrapper>
     <Title>This is a styled component</Title>
@@ -46,6 +70,7 @@ const App = () => (
     <Button>Other Button</Button>
     <TomatoButton as="a" href="https://www.google.com">I AM A TOMATO BUTTON!</TomatoButton>
     <StyledLink>This is a styled React functional component</StyledLink>
+    <Counter />
   </Wrapper>
 );
 
