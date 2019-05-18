@@ -20,6 +20,12 @@ const Button = styled.button`
   padding: 0.25em 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
+`;
+
+const TomatoButton = styled(Button)`
+  color: tomato;
+  border-color: tomato;
+  text-decoration: none;
 `
 
 const App = () => (
@@ -27,6 +33,7 @@ const App = () => (
     <Title>This is a styled component</Title>
     <Button primary>Primary Button</Button>
     <Button>Other Button</Button>
+    <TomatoButton as="a" href="https://www.google.com">I AM A TOMATO BUTTON!</TomatoButton>
   </Wrapper>
 );
 
