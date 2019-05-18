@@ -28,12 +28,24 @@ const TomatoButton = styled(Button)`
   text-decoration: none;
 `
 
+const Link = ({ className, children }) => (
+  <a href="/" className={className}>
+    {children}
+  </a>
+);
+
+const StyledLink = styled(Link)`
+  color: palevioletred;
+  font-weight: bold;
+`;
+
 const App = () => (
   <Wrapper>
     <Title>This is a styled component</Title>
     <Button primary>Primary Button</Button>
     <Button>Other Button</Button>
     <TomatoButton as="a" href="https://www.google.com">I AM A TOMATO BUTTON!</TomatoButton>
+    <StyledLink>This is a styled React functional component</StyledLink>
   </Wrapper>
 );
 
