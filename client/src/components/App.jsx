@@ -1,9 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: purple;
+  };
+`
 
 const Wrapper = styled.section`
   padding: 4em;
-  background: papayawhip;
+  background: ${props => props.color || 'papayawhip'};
 `;
 
 const Title = styled.h1`
@@ -64,14 +70,25 @@ class Counter extends React.Component {
 }
 
 const App = () => (
-  <Wrapper>
-    <Title>This is a styled component</Title>
-    <Button primary>Primary Button</Button>
-    <Button>Other Button</Button>
-    <TomatoButton as="a" href="https://www.google.com">I AM A TOMATO BUTTON!</TomatoButton>
-    <StyledLink>This is a styled React functional component</StyledLink>
-    <Counter />
-  </Wrapper>
+  <div>
+    <GlobalStyle />
+    <Wrapper>
+      <Title>This is a styled component</Title>
+    </Wrapper>
+    <Wrapper color="silver">
+      <Button primary>Primary Button</Button>
+      <Button>Other Button</Button>
+    </Wrapper>
+    <Wrapper>
+      <TomatoButton as="a" href="https://www.google.com">I AM A TOMATO BUTTON!</TomatoButton>
+    </Wrapper>
+    <Wrapper color="darkcyan">
+      <StyledLink>This is a styled React functional component</StyledLink>
+    </Wrapper>
+    <Wrapper>
+      <Counter />
+    </Wrapper>
+  </div>
 );
 
 export default App;
